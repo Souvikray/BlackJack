@@ -49,11 +49,11 @@ class Rules:
     @staticmethod
     def checkRulesForPlayer(pCardList, dCardList):
         global playerBalance
-        #Black jack occus when you have an ace and a 10
+        #Black jack occurs when you have an ace and a 10
         if len(pCardList) == 2 and sum(pCardList) == 21:
             print("BlackJack!")
             print("Player Wins!")
-            #you get a payout of 1.5 times in case of Blackjack
+            #you get a payout of 2 times in case of Blackjack
             playerBalance = playerBalance + (2 * currentBet) + 30
             print("PlayerBalance:", playerBalance)
             return True
@@ -158,6 +158,8 @@ def main():
     dCardList = []
 
     while(True):
+        #show player balance
+        print("Player Balance:","1000","\n")
         playerBet = int(input("Please enter your bet: "))
         if(playerBet>playerBalance):
             print("Please enter a valid bet.\n")
